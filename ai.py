@@ -15,10 +15,10 @@ from torch.autograd import Variable
 class Network(nn.Module):
     
     def __init__(self, input_size, nb_action):
-        super(Network, self).__init__()
-        self.input_size = input_size
-        self.nb_action = nb_action
-        self.fc1 = nn.Linear(input_size, 30)
+        super(Network, self).__init__()#inkaro kardim ta az tamam mod haye nn ro inherite mikne 
+        self.input_size = input_size#input n
+        self.nb_action = nb_action#output n
+        self.fc1 = nn.Linear(input_size, 30)#model selection for 30
         self.fc2 = nn.Linear(30, nb_action)
     
     def forward(self, state):
@@ -28,12 +28,12 @@ class Network(nn.Module):
 
 # tabe padash
 
-class ReplayMemory(object):
+class ReplayMemory(object):#markov decision 
     
     def __init__(self, capacity):
         self.capacity = capacity
         self.memory = []
-    
+    #tedad x harakat ghabli ro negah midarim
     def push(self, event):
         self.memory.append(event)
         if len(self.memory) > self.capacity:
