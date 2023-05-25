@@ -59,8 +59,9 @@ class Dqn():
     
     def select_action(self, state):
         probs = F.softmax(self.model(Variable(state, volatile = True))*100) # T=100
+        #softmax([1,2,3])=[0.4,0.15,0.7]=>softmax([1,2,3]*4)=[0.12,0,0.9]
         action = probs.multinomial(num_samples=1)
-        return action.data[0,0]
+        return action.data[0,0]#balatarin action
     
     def learn(self, batch_state, batch_next_state, batch_reward, batch_action):
         outputs = self.model(batch_state).gather(1, batch_action.unsqueeze(1)).squeeze(1)
@@ -70,7 +71,7 @@ class Dqn():
         self.optimizer.zero_grad()
         td_loss.backward(retain_graph = True)
         self.optimizer.step()
-    
+    #mama mia
     def update(self, reward, new_signal):
         new_state = torch.Tensor(new_signal).float().unsqueeze(0)
         self.memory.push((self.last_state, new_state, torch.LongTensor([int(self.last_action)]), torch.Tensor([self.last_reward])))
