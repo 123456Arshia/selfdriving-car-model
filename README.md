@@ -1,7 +1,7 @@
 # selfdriving-car-model
 self driving car using dqn
 Self-Driving Car Simulation with Deep Q-Learning (DQN)
-his repository contains a Python script that demonstrates a self-driving car simulation using Deep Q-Learning (DQN). The car learns to navigate a 2D grid environment, avoiding obstacles (sand areas), and reaching a specified goal location. The simulation is built using the Kivy framework for GUI and visualization.
+This repository contains a Python script that demonstrates a self-driving car simulation using Deep Q-Learning (DQN). The car learns to navigate a 2D grid environment, avoiding obstacles (sand areas), and reaching a specified goal location. The simulation is built using the Kivy framework for GUI and visualization.
 
 Getting Started
 
@@ -33,7 +33,7 @@ This simulation is intended for educational purposes and is a simplified represe
 Training a DQN agent in the Kivy application might require some time, and the performance may vary depending on your hardware.
 Author
 
-This project was developed by Arshia as a demonstration of Deep Q-Learning for self-driving car simulations.
+This project was developed by Arshia Taghavinejad as a demonstration of Deep Q-Learning for self-driving car simulations.
 
 Acknowledgments
 
